@@ -1,53 +1,66 @@
-//M10 Assignment Answer
 
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
   runApp(MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Greeting App'),
-        ),
-        body: Center(
+      builder: (context, widget) => ResponsiveWrapper.builder(
+        BouncingScrollWrapper.builder(context, widget!),
+        maxWidth: 1200,
+        minWidth: 480,
+        defaultScale: true,
+        breakpoints: [
+          ResponsiveBreakpoint.resize(480, name: MOBILE),
+          ResponsiveBreakpoint.autoScale(800, name: TABLET),
+          ResponsiveBreakpoint.autoScale(1000, name: DESKTOP),
+        ],
+        background: Container(color: Color(0xFFF5F5F5)),
+      ),
+      home: HomePage(),
+    );
+  }
+}
+
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Responsive Design Example'),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
+
               Text(
-                'Hello, World!',
+                'FLUTTER WEB. THE BASICS',
                 style: TextStyle(
-                  color: Colors.red,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  fontSize: 24,
                 ),
               ),
+              SizedBox(height: 20),
+
               Text(
-                'Welcome to Flutter!',
-                style: TextStyle(fontSize: 20),
+                'A responsive design example that changes layout depending on screen size.',
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 20),
-              Image.asset(
-                'lib/assets/image-removebg-preview.png',
-                width: 200,
-                height: 200,
-              ),
-              SizedBox(height: 20),
+
               ElevatedButton(
-                onPressed: () {
-                  final snackBar = SnackBar(
-                    content: Text('Button Pressed!'),
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                ),
-                child: Text('Press Me'),
+                onPressed: () {},
+                child: Text('Learn More'),
               ),
             ],
           ),
