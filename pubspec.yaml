@@ -30,7 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  responsive_framework: ^0.1.9
+  responsive_builder: ^0.4.2
+
 
 
 
