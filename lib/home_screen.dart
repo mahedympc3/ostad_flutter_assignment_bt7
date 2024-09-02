@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
               'HUMMING BIRD',
               style: TextStyle(
                 color: Colors.black,
-
+                fontWeight: FontWeight.bold,
               ),
             ),
             Spacer(),
@@ -76,12 +76,12 @@ class CustomDrawer extends StatelessWidget {
               color: Colors.green,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'SKILL UP NOW',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.green,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
@@ -90,7 +90,7 @@ class CustomDrawer extends StatelessWidget {
                 Text(
                   'TAP HERE',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.green,
                     fontSize: 16,
                   ),
                 ),
@@ -145,7 +145,7 @@ class DesktopLayout extends StatelessWidget {
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.greenAccent,
+              iconColor: Colors.green,
               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
             ),
             child: Text('Join course'),
@@ -185,7 +185,7 @@ class TabletLayout extends StatelessWidget {
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.greenAccent,
+              iconColor: Colors.green,
               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
             ),
             child: Text('Join course'),
@@ -226,7 +226,7 @@ class MobileLayout extends StatelessWidget {
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.greenAccent,
+              iconColor: Colors.green,
               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
             ),
             child: Text('Join course'),
